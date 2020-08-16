@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Cantata One', serif;
   font-size: 16px;
   line-height: 1;
 }
@@ -14,11 +14,19 @@ textarea{
 }
 
 .some-class {
+  font-family: 'Raleway', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
+
+.footer {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
 
 .jumbotron {
   text-align: center;
@@ -26,6 +34,19 @@ textarea{
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
+}
+
+.header {
+  background-color: rgb(214, 195, 107);
+}
+
+.lead {
+  margin-top: 40px;
+font-family: 'Raleway', sans-serif;
+}
+
+.date {
+font-size: 40px;
 }
 
 .description{
@@ -55,12 +76,12 @@ textarea{
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: rgb(128, 56, 56);
   color: white;
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: rgb(113, 133, 118);
   color: white;
 }
 
@@ -81,3 +102,10 @@ textarea{
   margin-top: 40px;
 }
 
+.btn-success {
+  background-color: rgb(31, 150, 76);
+}
+
+.btn-warning {
+  background-color: rgb(190, 138, 93);
+}
