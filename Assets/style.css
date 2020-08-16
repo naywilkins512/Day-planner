@@ -13,6 +13,13 @@ textarea{
   padding: 10px;
 }
 
+.some-class {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .jumbotron {
   text-align: center;
   background-color: transparent;
@@ -73,3 +80,4 @@ textarea{
 #currentDay {
   margin-top: 40px;
 }
+
