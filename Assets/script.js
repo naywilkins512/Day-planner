@@ -1,9 +1,7 @@
 
 function getHeaderDate() {
-let currentDate = moment().format('MMMM Do YYYY, h:mm:ss a');
+let currentDate = moment().format('MMMM Do YYYY');
 $("#currentDay").text(currentDate)
 }
 
 getHeaderDate();
-
-

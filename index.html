@@ -1,41 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./Assets/style.css" />
-    <title>Work Day Scheduler</title>
-  </head>
 
-  <body>
-    <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead">asdafsdfads</p>
-    </header>
-    <div class="container">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./Assets/style.css" />
+  <title>Work Day Scheduler</title>
+</head>
 
-        <div id="test"></div>
-      <!-- Timeblocks go here -->
+<body>
+  <header class="jumbotron">
+    <h1 class="display-3">Work Day Scheduler</h1>
+    <p class="lead">A simple calendar app for scheduling your work day</p>
+    <p id="currentDay" class="lead">asdafsdfads</p>
+  </header>
+
+  <div class="container">
+
+    <div class="row">
+      
+      <div class="col-sm-10">
+        <div class="input-group">
+          <div class="input-group-prepend">9am</div>
+          <input type="text" class="form-control" placeholder="task" aria-label="task" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button">Save</button>
+            <button class="btn btn-outline-secondary" type="button">Mark Completed</button>
+          </div>
+        </div>
+      </div>
+      
     </div>
 
-    <script src="./Assets/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-  </body>
+    <div class="row">
+      
+      <div class="col-sm-10">
+        <div class="input-group">
+          <div class="input-group-prepend">10am</div>
+          <input type="text" class="form-control" placeholder="task" aria-label="task" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button">Save</button>
+            <button class="btn btn-outline-secondary" type="button">Mark Completed</button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="row">
+      
+      <div class="col-sm-10">
+        <div class="input-group">
+          <div class="input-group-prepend">11am</div>
+          <input type="text" class="form-control" placeholder="task" aria-label="task" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-success" type="button">Save</button>
+            <button class="btn btn-outline-secondary" type="button">Mark Completed</button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="row justify-content-center">
+      
+      <div style="background-color: rgb(57, 161, 127);" class="col-sm-10">
+        <div class="input-group">
+          <div>9am</div>
+          <input type="text" class="form-control" placeholder="task" aria-label="task" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button">Save</button>
+            <button class="btn btn-outline-secondary" type="button">Mark Completed</button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+
+  </div>
+  <!-- <div class="row">
+    <div class="col-sm-2">10am</div>
+    <div class="col-sm-8"><input type="text"></div>
+    <div class="col-sm-2"><button>save</button></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">11am</div>
+    <div class="col-sm-8"><input type="text"></div>
+    <div class="col-sm-2"><button>save</button></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">12pm</div>
+    <div class="col-sm-8"><input type="text"></div>
+    <div class="col-sm-2"><button>save</button></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">1pm</div>
+    <div class="col-sm-8"><input type="text"></div>
+    <div class="col-sm-2"><button>save</button></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">2pm</div>
+    <div class="col-sm-8"><input type="text"></div>
+    <div class="col-sm-2"><button>save</button></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">3pm</div>
+    <div class="col-sm-8"><input type="text"></div>
+    <div class="col-sm-2"><button>save</button></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">4pm</div>
+    <div class="col-sm-8"><input type="text"></div>
+    <div class="col-sm-2"><button>save</button></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">5pm</div>
+    <div class="col-sm-8"><input type="text"></div>
+    <div class="col-sm-2"><button>save</button></div>
+  </div> -->
+  <!-- Timeblocks go here -->
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+  <script src="./Assets/script.js"></script>
+</body>
+
 </html>
