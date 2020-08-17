@@ -8,7 +8,16 @@ getHeaderDate();
 
 
 
-let retrieveData = JSON.parse(localStorage.getItem("taskArr"))
+
+
+function getOldTasks() {
+    JSON.parse(localStorage.getItem("taskArr"))
+    taskArr.forEach
+    //loop through the local storage array
+    //append each task to its associated input field
+
+}
+
 
 
 let taskArr = []
@@ -17,29 +26,35 @@ let taskArr = []
 
 
 
+
+
+
+
+
+
 // $("#form-control").each(function() {
 
-$(".save-button").on("click", function(event) {
+$(".save-button").on("click", function (event) {
     event.preventDefault();
 
-let hour = $(this).data("hour");
-let task = $("#" + hour + "text").val();
-taskArr.push(hour, task);
-localStorage.setItem("taskArr", JSON.stringify(taskArr));
+    let hour = $(this).data("hour");
+    let task = $("#" + hour + "text").val();
+    taskArr.push({ hour, task });
+    localStorage.setItem("taskArr", JSON.stringify(taskArr));
+    let retrieveData = JSON.parse(localStorage.getItem("taskArr"))
+    console.log(retrieveData)
+
+
+    // console.log(taskArr);
+});
+
+// });
 
 
 $(".btn-warning").click(function () {
     $("#9text").text("")
 
 })
-
-console.log(taskArr);
-});
-  
-// });
-
-
-
 
 
 
@@ -51,10 +66,17 @@ console.log(taskArr);
 
 //highlight text
 
-$('textarea').focus(function() {
+$('textarea').focus(function () {
     $(this).css('background', 'white')
 })
 
-$('textarea').blur(function() {
+$('textarea').blur(function () {
     $(this).css('background', 'whitesmoke')
 })
+
+
+
+// So that would look something like this w/ JQuery:
+// $("#myInput").html("walk the dog");
+// or this with vanilla js
+// document.getElementById("myInput").innerHTML = "walk the dog";
