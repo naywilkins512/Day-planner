@@ -104,9 +104,10 @@ font-size: 40px;
 }
 
 .btn-success {
-  background-color: rgb(31, 150, 76);
+  background-color: rgb(42, 151, 39);
 }
 
 .btn-warning {
-  background-color: rgb(190, 138, 93);
+  background-color: rgb(151, 130, 112);
+  color: whitesmoke;
 }

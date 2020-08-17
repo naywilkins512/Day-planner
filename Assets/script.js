@@ -14,6 +14,9 @@ let retrieveData = JSON.parse(localStorage.getItem("taskArr"))
 let taskArr = []
 
 
+
+
+
 // $("#form-control").each(function() {
 
 $(".save-button").on("click", function(event) {
@@ -44,3 +47,14 @@ console.log(taskArr);
 
 
 // In a nutshell, yes. The class would be for the selector that you’ll use to loop over the elements and the id would be used the identify the timeslot
+
+
+//highlight text
+
+$('textarea').focus(function() {
+    $(this).css('background', 'white')
+})
+
+$('textarea').blur(function() {
+    $(this).css('background', 'whitesmoke')
+})
