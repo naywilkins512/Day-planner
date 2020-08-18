@@ -7,20 +7,20 @@ let taskArr = JSON.parse(localStorage.getItem("taskArr")) || []
 // }
 function getTimeClass() {
 
-    let timeslot = $('form').class
+    let timeslot = $(this).data("hour");
+    let newinteger = parseInt(timeslot);
+    console.log(newinteger)
 
-    console.log(hour)
+    $("form").each(function () {
 
-    $("form").each(function (index, timeslot) {
+        if (parseInt(newinteger) < moment().format("HH")) {
+            $('form').attr('class', 'past')
 
-        if (hour < moment().format("HH")) {
-            $(timeslot).attr('class', 'past')
+        } else if (parseInt(newinteger) === moment().format("HH")) {
+            $('form').attr('class', 'present')
 
-        } else if (hour === moment().format("HH")) {
-            $(timeslot).attr('class', 'present')
-
-        } else if (hour > moment().format("HH")) {
-            $(timeslot).attr('class', 'future')
+        } else if (parseInt(newinteger) > moment().format("HH")) {
+            $('form').attr('class', 'future')
 
         }
     })
