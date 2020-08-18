@@ -6,9 +6,22 @@ let taskArr = JSON.parse(localStorage.getItem("taskArr")) || []
 //     taskArr = []
 // }
 function getTimeClass() {
-$.each(taskArr. function(index, ))
 
-}
+    $("form").each(function( index ) {
+
+    if (hour < moment().format("HH")) {
+        $('form').css('class', 'past')
+
+    } else if (hour === moment().format("HH")) {
+        $('form').css('class', 'present')
+
+    } else if (hour > moment().format("HH")) {
+        $('form').css('class', 'future')
+
+    }
+})
+
+
 
 
 function getHeaderDate() {
@@ -19,10 +32,11 @@ function getHeaderDate() {
 function getTasks() {
     $.each(taskArr, function (index, taskObject) {
         $("#" + taskObject.hour + "text").val(taskObject.task)
-   
+
 
     })
 }
+getTimeClass();
 getHeaderDate();
 getTasks()
 
