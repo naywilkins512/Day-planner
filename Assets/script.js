@@ -1,38 +1,31 @@
 
+let taskArr = JSON.parse(localStorage.getItem("taskArr")) || []
+
+// another way of doing it
+// if (!taskArr){
+//     taskArr = []
+// }
+function getTimeClass() {
+$.each(taskArr. function(index, ))
+
+}
+
+
 function getHeaderDate() {
     let currentDate = moment().format('MMMM Do YYYY');
     $("#currentDay").text(currentDate)
 }
 
-getHeaderDate();
+function getTasks() {
+    $.each(taskArr, function (index, taskObject) {
+        $("#" + taskObject.hour + "text").val(taskObject.task)
+   
 
-
-
-
-
-function getOldTasks() {
-    JSON.parse(localStorage.getItem("taskArr"))
-    taskArr.forEach
-    //loop through the local storage array
-    //append each task to its associated input field
-
+    })
 }
+getHeaderDate();
+getTasks()
 
-
-
-let taskArr = []
-
-
-
-
-
-
-
-
-
-
-
-// $("#form-control").each(function() {
 
 $(".save-button").on("click", function (event) {
     event.preventDefault();
@@ -41,18 +34,14 @@ $(".save-button").on("click", function (event) {
     let task = $("#" + hour + "text").val();
     taskArr.push({ hour, task });
     localStorage.setItem("taskArr", JSON.stringify(taskArr));
-    let retrieveData = JSON.parse(localStorage.getItem("taskArr"))
-    console.log(retrieveData)
 
-
-    // console.log(taskArr);
 });
 
-// });
 
-
-$(".btn-warning").click(function () {
-    $("#9text").text("")
+$(".btn-warning").click(function (event) {
+    event.preventDefault();
+    let hour = $(this).siblings(".save-button").data("hour");
+    $("#" + hour + "text").val("");
 
 })
 
