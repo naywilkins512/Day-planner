@@ -7,20 +7,24 @@ let taskArr = JSON.parse(localStorage.getItem("taskArr")) || []
 // }
 function getTimeClass() {
 
-    $("form").each(function( index ) {
+    let timeslot = $('form').class
 
-    if (hour < moment().format("HH")) {
-        $('form').css('class', 'past')
+    console.log(hour)
 
-    } else if (hour === moment().format("HH")) {
-        $('form').css('class', 'present')
+    $("form").each(function (index, timeslot) {
 
-    } else if (hour > moment().format("HH")) {
-        $('form').css('class', 'future')
+        if (hour < moment().format("HH")) {
+            $(timeslot).attr('class', 'past')
 
-    }
-})
+        } else if (hour === moment().format("HH")) {
+            $(timeslot).attr('class', 'present')
 
+        } else if (hour > moment().format("HH")) {
+            $(timeslot).attr('class', 'future')
+
+        }
+    })
+}
 
 
 
@@ -56,7 +60,7 @@ $(".btn-warning").click(function (event) {
     event.preventDefault();
     let hour = $(this).siblings(".save-button").data("hour");
     $("#" + hour + "text").val("");
-
+    localStorage.setItem("taskArr", JSON.stringify(taskArr));
 })
 
 
