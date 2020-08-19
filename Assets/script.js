@@ -5,21 +5,22 @@ let taskArr = JSON.parse(localStorage.getItem("taskArr")) || []
 function getTimeClass() {
 
 
-
-
-    $('button').each(function () {
+    $('.btn-success').each(function () {
 
         let timeslot = $(this).data("hour");
         let newinteger = parseInt(timeslot);
-        // let newinteger = 
+        let currentHour = parseInt(moment().format("HH"))
 
-        if (parseInt(newinteger) < moment().format("HH")) {
+        console.log(newinteger)
+        console.log(currentHour)
+
+        if (newinteger < currentHour) {
             $('form').attr('class', 'past')
 
-        } else if (parseInt(newinteger) === moment().format("HH")) {
+        } else if (newinteger === currentHour) {
             $('form').attr('class', 'present')
 
-        } else if (parseInt(newinteger) > moment().format("HH")) {
+        } else if (newinteger > currentHour) {
             $('form').attr('class', 'future')
 
         }
@@ -52,6 +53,7 @@ getTasks()
 
 // saves the tasks to local storage
 
+
 $(".save-button").on("click", function (event) {
     event.preventDefault();
 
@@ -62,6 +64,7 @@ $(".save-button").on("click", function (event) {
 
 });
 
+
 //clears the task from the page
 
 
@@ -71,13 +74,13 @@ $(".btn-warning").click(function (event) {
     let task = $("#" + hour + "text").val("");
     taskArr.push([{ hour, task }]);
     localStorage.setItem("taskArr", JSON.stringify(taskArr));
-
+    // savethedata()
 });
 
 //highlight text function
 
 $('textarea').focus(function () {
-    $(this).css('background', 'white')
+    $(this).css('background', 'lightblue')
 })
 
 $('textarea').blur(function () {
