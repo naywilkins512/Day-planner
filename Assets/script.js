@@ -10,20 +10,17 @@ function getTimeClass() {
         let timeslot = $(this).data("hour");
         let newinteger = parseInt(timeslot);
         let currentHour = parseInt(moment().format("HH"))
+        const $form = $(this).parents("form");
 
-        console.log(newinteger)
-        console.log(currentHour)
 
         if (newinteger < currentHour) {
-            $('form').attr('class', 'past')
-
+            $form.attr("class", "past");
         } else if (newinteger === currentHour) {
-            $('form').attr('class', 'present')
-
+            $form.attr("class", "present");
         } else if (newinteger > currentHour) {
-            $('form').attr('class', 'future')
-
+            $form.attr("class", "future");
         }
+
     })
 }
 
