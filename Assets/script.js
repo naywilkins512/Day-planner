@@ -1,17 +1,17 @@
 
 let taskArr = JSON.parse(localStorage.getItem("taskArr")) || []
 
-// another way of doing it
-// if (!taskArr){
-//     taskArr = []
-// }
+
 function getTimeClass() {
 
-    let timeslot = $(this).data("hour");
-    let newinteger = parseInt(timeslot);
-    console.log(newinteger)
 
-    $("form").each(function () {
+
+
+    $('button').each(function () {
+
+        let timeslot = $(this).data("hour");
+        let newinteger = parseInt(timeslot);
+        // let newinteger = 
 
         if (parseInt(newinteger) < moment().format("HH")) {
             $('form').attr('class', 'past')
@@ -27,11 +27,14 @@ function getTimeClass() {
 }
 
 
+// gets and displays Date
 
 function getHeaderDate() {
     let currentDate = moment().format('MMMM Do YYYY');
     $("#currentDay").text(currentDate)
 }
+
+// gets and displays stored tasks
 
 function getTasks() {
     $.each(taskArr, function (index, taskObject) {
@@ -40,10 +43,14 @@ function getTasks() {
 
     })
 }
+
+//calls the functions 
+
 getTimeClass();
 getHeaderDate();
 getTasks()
 
+// saves the tasks to local storage
 
 $(".save-button").on("click", function (event) {
     event.preventDefault();
@@ -55,23 +62,19 @@ $(".save-button").on("click", function (event) {
 
 });
 
+//clears the task from the page
+
 
 $(".btn-warning").click(function (event) {
     event.preventDefault();
     let hour = $(this).siblings(".save-button").data("hour");
-    $("#" + hour + "text").val("");
+    let task = $("#" + hour + "text").val("");
+    taskArr.push([{ hour, task }]);
     localStorage.setItem("taskArr", JSON.stringify(taskArr));
-})
 
+});
 
-
-//In terms of your question regarding the tasks, that’s really your call how you want to approach it. Remember you can use classes to target multiple elements, so one approach would be to ensure your textarea’s share a common class and some unique identifier and from there you can use jQuery target the class and loop over each element and write your logic to deal with the task
-
-
-// In a nutshell, yes. The class would be for the selector that you’ll use to loop over the elements and the id would be used the identify the timeslot
-
-
-//highlight text
+//highlight text function
 
 $('textarea').focus(function () {
     $(this).css('background', 'white')
@@ -81,9 +84,3 @@ $('textarea').blur(function () {
     $(this).css('background', 'whitesmoke')
 })
 
-
-
-// So that would look something like this w/ JQuery:
-// $("#myInput").html("walk the dog");
-// or this with vanilla js
-// document.getElementById("myInput").innerHTML = "walk the dog";
