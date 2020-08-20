@@ -61,19 +61,6 @@ $(".save-button").on("click", function (event) {
 
 });
 
-
-//clears the task from the page
-
-
-$(".btn-warning").click(function (event) {
-    event.preventDefault();
-    let hour = $(this).siblings(".save-button").data("hour");
-    let task = $("#" + hour + "text").val("");
-    taskArr.push([{ hour, task }]);
-    localStorage.setItem("taskArr", JSON.stringify(taskArr));
-    // savethedata()
-});
-
 //highlight text function
 
 $('textarea').focus(function () {
