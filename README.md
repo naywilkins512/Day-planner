@@ -2,7 +2,7 @@
 
 This is a simple calendar application that allows the user to save events for each hour of the day. This app runs in the browser and features dynamically updated HTML and CSS powered by jQuery. The tasks are stored into local storage, so if you refresh, your plans will still be there!
 
-## deployed link : 
+## deployed link : https://naywilkins512.github.io/day-planner/
 
 
 # Demo
