@@ -54,8 +54,9 @@ getTasks()
 $(".save-button").on("click", function (event) {
     event.preventDefault();
 
-    let hour = $(this).data("hour");
+    let hour = $(this).data("hour")
     let task = $("#" + hour + "text").val();
+    
     taskArr.push({ hour, task });
     localStorage.setItem("taskArr", JSON.stringify(taskArr));
 
